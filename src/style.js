@@ -9,10 +9,11 @@ const style = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "#FDA7DF",
     height: 30,
-    width: 50,
+    width: "50%",
     justifyContent: "center",
     marginLeft: 10,
     marginRight: 10,
+    marginBottom: 20,
   },
   container: {
     backgroundColor: "#9980FA",
@@ -20,7 +21,7 @@ const style = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    padding: 25,
+    padding: 5,
   },
   stylingValue: {
     color: "#FDA7DF",

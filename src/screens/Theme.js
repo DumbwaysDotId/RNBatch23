@@ -7,7 +7,6 @@ import {
   Avatar,
   Center,
   useColorModeValue,
-  NativeBaseProvider,
 } from "native-base";
 
 function ColorModeExample() {
@@ -16,7 +15,7 @@ function ColorModeExample() {
     <>
       <Heading>I'm a Heading</Heading>
       <Button
-        colorScheme={colorMode === "light" ? "blue" : "red"}
+        colorScheme={colorMode === "light" ? "green" : "purple"}
         onPress={() => {
           toggleColorMode();
         }}
@@ -44,7 +43,7 @@ function ColorModeExample() {
 }
 
 const LocalWrapper = ({ children }) => {
-  const bg = useColorModeValue("gray.200", "gray.800");
+  const bg = useColorModeValue("pink.300", "pink.600");
   return (
     <Center flex={1} bg={bg}>
       {children}

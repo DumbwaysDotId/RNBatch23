@@ -1,10 +1,24 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { Text } from "native-base";
 
 const Headers = (props) => {
   return (
-    <View>
-      <Text>{props.title}</Text>
+    <View
+      style={{
+        marginBottom: 20,
+        marginTop: 30,
+        backgroundColor: "#fd79a8",
+        width: "100%",
+        height: "10%",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {/* <Text style={{ fontFamily: "Inter_900Black" }}>{props.title}</Text> */}
+      <Text fontFamily="body" fontWeight={400} fontStyle="normal">
+        {props.title}
+      </Text>
     </View>
   );
 };

@@ -6,15 +6,15 @@ import {
   Image,
   TextInput,
   ScrollView,
-  Keyboard,
-  TouchableWithoutFeedback,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 //Import CSS
 import style from "../style";
 
 const Content = () => {
-  const [number, onChangeNumber] = useState(0);
+  const [text, setText] = useState("");
+  const navigation = useNavigation();
 
   function getBatch() {
     return 20 + 3;
@@ -31,27 +31,35 @@ const Content = () => {
   };
 
   return (
-    <View style={style.container}>
-      <ScrollView>
-        <Text>
+    <ScrollView>
+      <View style={style.container}>
+        <Text style={{ marginTop: 20, marginBottom: 20 }}>
           Welcome To {nameBootcamp} Batch {getBatch()}
         </Text>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Counter")}
+          style={style.stylingButton}
+        >
+          <Text style={{ textAlign: "center", color: "#FFF" }}>
+            Counter Screen
+          </Text>
+        </TouchableOpacity>
 
         <Image
           source={getPic}
           style={{ width: 300, height: 500, marginBottom: 20 }}
         />
         <TextInput
-          onChangeText={onChangeNumber}
-          value={number}
-          placeholder="Input the Number"
-          keyboardType="numeric"
+          onChangeText={setText}
+          value={text}
+          placeholder="Input the Text"
           style={{
             backgroundColor: "#FFF",
             maxWidth: "100%",
             height: 50,
             borderRadius: 10,
-            padding: 10,
+            padding: 5,
             marginBottom: 20,
           }}
         />
@@ -60,10 +68,17 @@ const Content = () => {
           onPress={() => Greeting()}
           style={style.stylingButton}
         >
-          <Text style={style.stylingText}>Tap Me</Text>
+          <Text
+            style={style.stylingText}
+            fontFamily="body"
+            fontWeight={500}
+            fontStyle="Medium"
+          >
+            Tap Me
+          </Text>
         </TouchableOpacity>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
